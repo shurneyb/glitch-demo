@@ -89,20 +89,6 @@ app.get('/audio-features', function (request, response) {
     });
 });
 
-app.get('/audio-features', function (request, response) {
-  
-  // Get the audio features for a track ID
-  spotifyApi.getAudioFeaturesForTrack('6jj5kO7tFT3ir8WbbVO0iU')
-    .then(function(data) {
-    
-      //Send the audio features object
-      response.send(data.body);
-    
-    }, function(err) {
-      console.error(err);
-    });
-});
-
 app.get('/artist', function (request, response) {
   
   // Get information about an artist
