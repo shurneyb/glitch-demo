@@ -64,7 +64,7 @@ app.get('/category-playlists', function (request, response) {
   
   // Get playlists from a browse category
   // Find out which categories are available here: https://beta.developer.spotify.com/console/get-browse-categories/
-  spotifyApi.getPlaylistsForCategory('rock', { limit : 10 })
+  spotifyApi.getPlaylistsForCategory('party', { country: 'CA', limit : 10})
     .then(function(data) {
     
     // Send the list of playlists
@@ -78,7 +78,21 @@ app.get('/category-playlists', function (request, response) {
 app.get('/audio-features', function (request, response) {
   
   // Get the audio features for a track ID
-  spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC')
+  spotifyApi.getAudioFeaturesForTrack('4iV5W9uYEdYUVa79Axb7Rh')
+    .then(function(data) {
+    
+      //Send the audio features object
+      response.send(data.body);
+    
+    }, function(err) {
+      console.error(err);
+    });
+});
+
+app.get('/audio-features', function (request, response) {
+  
+  // Get the audio features for a track ID
+  spotifyApi.getAudioFeaturesForTrack('6jj5kO7tFT3ir8WbbVO0iU')
     .then(function(data) {
     
       //Send the audio features object

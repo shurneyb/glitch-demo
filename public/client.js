@@ -48,7 +48,7 @@ $(function() {
     console.groupEnd();
     
     // The audio features we want to show
-    var keys = ["danceability", "energy", "acousticness"]
+    var keys = ["danceability", "energy", "acousticness", "loudness", "tempo"]
     
     // Display the audio features
     keys.map(function(key, i) {
@@ -57,6 +57,17 @@ $(function() {
         feature.appendTo('#audio-features-container');
       }
     });
+    
+        // Display the artist name
+    var artistName = $('<h3>' + data.artists[0].name + '</h3>');
+    artistName.appendTo('#audio-features-container');
+    
+    // Display the track name
+    var trackName = $(
+      '<h3> <a href="' + data.external_urls.spotify + '" target=_blank>' + data.name + '</a></h3>'
+    );
+    trackName.appendTo('#audio-features-container');
+    
   });
   
   $.get('/artist', function(data) {
