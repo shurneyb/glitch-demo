@@ -85,6 +85,9 @@ $(function() {
     var trackName = $('<h3>' + data.name + '</h3>');
     trackName.appendTo('#artist-container');
     
+    // Show populartiy for the artist
+    var 
+    
     // Display the artist's genres
     data.genres.map(function(genre, i) {
       var genreItem = $('<p>' + genre + '</p>');
