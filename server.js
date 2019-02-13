@@ -120,7 +120,7 @@ app.get('/artist-top-tracks', function (request, response) {
 app.get('/related-artists', function (request, response) {
   
   //Get an artist's related artists
-spotifyApi.getArtistRelatedArtists(artistId).then(
+spotifyApi.getArtistRelatedArtists('0oSGxfWSnnOXhD2fKuz2Gy').then(
   function(data) {
     if (data.body.artists.length) {
       // Print the number of similar artists
