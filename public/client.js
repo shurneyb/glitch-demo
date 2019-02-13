@@ -47,6 +47,11 @@ $(function() {
     console.log(data);
     console.groupEnd();
     
+    // Get track and artist name
+    
+    console.log(this.trackName(data.id));
+    //trackName.appendTo('#audio-features-container');
+    
     // The audio features we want to show
     var keys = ["danceability", "energy", "acousticness", "loudness", "tempo"]
     
