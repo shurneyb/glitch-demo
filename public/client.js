@@ -47,9 +47,9 @@ $(function() {
     console.log(data);
     console.groupEnd();
     
-    // Get track and artist name
+    // Get track and artist name (cannot figure out)
     
-    console.log(this.trackName(data.id));
+
     //trackName.appendTo('#audio-features-container');
     
     // The audio features we want to show
@@ -110,6 +110,10 @@ $(function() {
     console.group('%cResponse from /artist-top-tracks', 'color: #F037A5; font-size: large');
     console.log(data);
     console.groupEnd();
+    
+    // Display artists name
+     var artistName = $('<h3>' + data[0].artists[0].name + '</h3>');
+     artistName.appendTo('#top-tracks-container');
     
     // Display the audio features
     data.map(function(track, i) {
