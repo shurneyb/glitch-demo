@@ -117,25 +117,6 @@ app.get('/artist-top-tracks', function (request, response) {
     });
 });
 
-app.get('/related-artists', function (request, response) {
-  
-  //Get an artist's related artists
-spotifyApi.getArtistRelatedArtists('0oSGxfWSnnOXhD2fKuz2Gy').then(
-  function(data) {
-    if (data.body.artists.length) {
-      // Print the number of similar artists
-      console.log('I got ' + data.body.artists.length + ' similar artists!');
-
-      console.log('The most similar one is ' + data.body.artists[0].name);
-    } else {
-      console.log("I didn't find any similar artists.. Sorry.");
-    }
-  },
-  function(err) {
-    console.log('Something went wrong..', err.message);
-  }
-);
-
 
 
 //-------------------------------------------------------------//

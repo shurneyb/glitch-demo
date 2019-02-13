@@ -121,15 +121,4 @@ $(function() {
       trackName.appendTo('#top-tracks-container');
     });
   });
-  
-  $.get('/related-artists', function(data) {
-  // "Data" is the object we get from the API. See server.js for the function that returns it.
-  console.group('%cResponse from /related-artists', 'color: #F035B6; font-size: large');
-  console.log(data);
-  console.groupEnd();
-    
-  
-
-  });
-
 });
